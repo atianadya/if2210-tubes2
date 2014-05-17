@@ -1,0 +1,31 @@
+Monopoli ITB adalah permainan monopoli yang didesain semirip-miripnya dengan keadaan lingkungan ITB dengan beberapa fitur yang diubah. Monopoli ITB memiliki beberapa aturan permainan:
+
+1. Jumlah minimal pemain adalah 2 orang, jumlah maksimalnya adalah 4 orang.
+
+2. Mata uang yang digunakan dalam permainan ini adalah ITBR, Institut Teknologi Bandung Rupiah (ITBR1 = IDR10.000).
+
+3. Pada awal permainan, masing-masing pemain mendapat uang sebesar ITBR15.000, harap digunakan sebijak mungkin.
+
+4. Di monopoli ITB, terdapat kartu kesempatan yang berisi petunjuk-petunjuk yang harus dilakukan oleh pemain. Bisa mendapatkan uang, ataupun membayar sejumlah uang karena suatu kejadian, dan lain-lain.
+
+5. Pemain dapat diskorsing jika berhenti di petak "kena skorsing" dan pindah ke petak "Kosan/sedang diskorsing".
+
+6. Jika pemain yang diskorsing mendapat giliran mengocok dadu, pemain mendapat pilihan: a) Jika pemain memiliki kartu kesempatan yang berisi "Bebas dari skorsing", maka pemain secara otomatis akan langsung dapat bermain dan mengocok dadu. b) Jika pemain tidak memiliki kartu kesempatan yang berisi "Bebas dari skorsing", pemain akan mengocok dadu. Jika kedua dadu menunjukkan angka yang sama, pemain dapat bermain. Jika tidak, pemain mendapat pilihan untuk membayar sebesar ITBR500 untuk melanjutkan giliran bermain. Jika tidak membayar, pemain tersebut tidak mendapatkan giliran bermain.
+
+7. Pemain yang jumlah nominal uangnya lebih kecil dari ITBR0 harus mortgage tempat yang pemain tersebut miliki atau menjual wifi di tempat yang ia miliki agar jumlah uangnya kembali "normal". Jika tidak ada lagi wifi yang bisa dijual atau tempat yang bisa di mortgage, pemain harus menyatakan "bangkrut" dan tidak dapat bermain lagi.
+
+8. Terdapat dua jenis petak Tempat yang dapat dibeli, yaitu tempat yang dapat dibangun wifi (Gedung Aula Timur, Gedung Aula Barat, Gedung Oktagon, Gedung PLN, Gedung TVST, Labtek V, CC Barat, Labtek VI, CC Timur, Labtek VII, Labtek VIII, Labtek IX, GKU Timur, Gedung SR, Gedung Mesin, GKU Barat, Labtek XI, Gedung TI, Gedung SBM, Comlabs, Gedung PAU, dan Perpustakaan) dan tempat yang tidak dapat dibangun wifi (Parkir Sepeda Selatan, Lab Konversi, Parkir Sepeda Barat, Parkir Sepeda Utara, Kolam Indonesia Tenggelam [INTEL], dan Parkir Sepeda Timur). Kedua tempat tersebut dapat di-mortgage (digadaikan).
+
+9. Harga sewa adalah harga yang harus dibayar oleh pemain yang berada di petak tempat yang dimiliki oleh pemain lain. Pemain yang memiliki suatu tempat tersebut akan mendapatkan uang sewa dari pemain lain yang menempati tempat tersebut.
+
+10. Semakin banyak jumlah wifi yang dibangun di tempat yang bisa dibangun wifi, semakin besar harga sewanya.
+
+11. Jika pemain berada di petak LK, pemain harus membayar pajak melewati LK sebesar ITBR1500. Lewat LK --> bayar Pajak ITBR 1500
+
+12. Jika pemain berada di petak Parkir SBM, pemain akan mendapatkan uang hasil dari pembayaran pajak LK dan pembayaran BPPS.
+
+13. Jika pemain berada di petak bayar BPPS, pemain harus membayar BPPS sebesar ITBR2000.
+
+14. Pemain tidak dapat "bertransaksi" dengan pemain lain, tidak seperti permainan monopoli pada umumnya.
+
+15. Permainan akan berakhir dalam kondisi: a) Ada pemain yang memiliki jumlah uang sebesar ITBR100.000 sehingga pemain tersebut dapat membeli LK. Pemain ini lah yang menjadi pemenangnya. b) Hampir semua pemain bangkrut sehingga tersisa satu pemain. Pemain ini lah pemenangnya.

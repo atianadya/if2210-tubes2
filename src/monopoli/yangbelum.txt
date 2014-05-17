@@ -1,0 +1,9 @@
+penanganan penjara
+kartu kesempatan
+penanganan aksi
+penanganan bangkrut : semua milik player menjadi milik bank
+penanganan kocok dadu
+harus buat method bayar sewa
+masih bisa buy sebelum kocok
+di xml belum ada hargasewa
+jalannya belum satu tile satu tile

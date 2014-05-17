@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<chance>
+	<card id="1">
+		<effect>Melanggar peraturan K3L, denda ITBR 1.500</effect>
+	</card>
+	<card id="2">
+		<effect>Menceburkan teman ke kolam INTEL, denda ITBR 2.000</effect>
+	</card>
+	<card id="3">
+		<effect>Mendapat nilai 100 di kuis OOP, mendapatkan uang sebesar ITBR 2.000</effect>
+	</card>
+	<card id="4">
+		<effect>Mundur tiga petak</effect>
+	</card>
+	<card id="5">
+		<effect>Maju sampai Gedung SR</effect>
+	</card>
+	<card id="6">
+		<effect>Maju sampai Parkir Sepeda Selatan, Bila melalui START mendapatkan uang sebesar ITBR 1.500</effect>
+	</card>
+	<card id="7">
+		<effect>Mundur ke Labtek V</effect>
+	</card>
+	<card id="8">
+		<effect>Karena kesalahan LK, Anda berhak menerima ITBR 3.000</effect>
+	</card>
+	<card id="9">
+		<effect>Mendapat voucher makan sebesar ITBR 1.000</effect>
+	</card>
+	<card id="10">
+		<effect>Membayar kerusakan alat laboratorium sebesar ITBR 3.000</effect>
+	</card>
+	<card id="11">
+		<effect>Mendapat tunjangan sebesar ITBR 1.000</effect>
+	</card>
+	<card id="12">
+		<effect>Menyerempet mobil dosen, bayar ITBR 2.000</effect>
+	</card>
+	<card id="13">
+		<effect>Membayar pajak BPPS sebesar ITBR 500</effect>
+	</card>
+	<card id="14">
+		<effect>Anda ulang tahun dan berhak mendapatkan uang sebesar ITBR 2000 dari himpunan.</effect>
+	</card>
+	<card id="15">
+		<effect>Bebas dari skorsing</effect>
+	</card>
+	<card id="16">
+		<effect>Maju lima petak</effect>
+	</card>
+</chance>

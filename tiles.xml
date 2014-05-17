@@ -1,0 +1,350 @@
+<?xml version="1.0"?>
+<tempat>
+	<tile type="StartTempat">
+		<id>1</id>
+		<deskripsi>Gerbang ITB</deskripsi>
+	</tile>
+	<tile type="Tempat">
+		<id>2</id>
+		<nama>Gedung Aula Timur</nama>
+		<deskripsi>Aula Timur di ITB, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>1000</hargabeli>
+		<hargamortgage>500</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>200</harga1wifi>
+		<hargasewa>300</hargasewa>
+	</tile>
+	<tile type="Kesempatan">
+		<id>3</id>
+		<deskripsi>Tempat mengambil kartu kesempatan</deskripsi>
+	</tile>
+	<tile type="Tempat">
+		<id>4</id>
+		<nama>Gedung Aula Barat</nama>
+		<deskripsi>Aula Barat, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>2000</hargabeli>
+		<hargamortgage>1000</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>400</harga1wifi>
+		<hargasewa>500</hargasewa>
+	</tile>
+	<tile type="PajakBPPS">
+		<id>5</id>
+		<deskripsi>Anda harus membayar BPPS sebesar ITBR 2000</deskripsi>
+		<hargapajak>2000</hargapajak>
+	</tile>
+	<tile type="TempatNonWifi">
+		<id>6</id>
+		<nama>Parkir Sepeda Selatan</nama>
+		<deskripsi>Parkir Sepeda Selatan, Anda dapat membeli tempat ini</deskripsi>
+		<hargabeli>2500</hargabeli>
+		<hargamortgage>1250</hargamortgage>
+		<hargasewa>1200</hargasewa>
+		<pemilik>Unknown</pemilik>
+	</tile>
+	<tile type="Tempat">
+		<id>7</id>
+		<nama>Gedung Oktagon</nama>
+		<deskripsi>Sebuah gedung bernama Oktagon di ITB, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>2500</hargabeli>
+		<hargamortgage>1250</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>500</harga1wifi>
+		<hargasewa>600</hargasewa>
+	</tile>
+	<tile type="Kesempatan">
+		<id>8</id>
+		<deskripsi>Tempat mengambil kartu kesempatan</deskripsi>
+	</tile>
+	<tile type="Tempat">
+		<id>9</id>
+		<nama>Gedung PLN</nama>
+		<deskripsi>Sebuah gedung bernama PLN di ITB, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>3000</hargabeli>
+		<hargamortgage>1500</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>600</harga1wifi>
+		<hargasewa>700</hargasewa>
+	</tile>
+	<tile type="Tempat">
+		<id>10</id>
+		<nama>Gedung TVST</nama>
+		<deskripsi>Sebuah gedung bernama TVST di ITB, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>3500</hargabeli>
+		<hargamortgage>1750</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>700</harga1wifi>
+		<hargasewa>800</hargasewa>
+	</tile>
+	<tile type="Kosan">
+		<id>11</id>
+		<deskripsi>Kosan, tempat di mana Anda berada bila Anda sedang diskorsing</deskripsi>
+	</tile>
+	<tile type="Tempat">
+		<id>12</id>
+		<nama>Labtek V</nama>
+		<deskripsi>Sebuah gedung bernama Labtek V di ITB, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>4000</hargabeli>
+		<hargamortgage>2000</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>800</harga1wifi>
+		<hargasewa>900</hargasewa>
+	</tile>
+	<tile type="TempatNonWifi">
+		<id>13</id>
+		<nama>Lab Konversi</nama>
+		<deskripsi>Lab Konversi, Anda dapat membeli tempat ini</deskripsi>
+		<hargabeli>4000</hargabeli>
+		<hargamortgage>2000</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<hargasewa>2000</hargasewa>
+	</tile>
+	<tile type="Tempat">
+		<id>14</id>
+		<nama>CC Barat</nama>
+		<deskripsi>Campus Center sebelah Barat di ITB, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>4500</hargabeli>
+		<hargamortgage>2250</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>900</harga1wifi>
+		<hargasewa>900</hargasewa>
+	</tile>
+	<tile type="Tempat">
+		<id>15</id>
+		<nama>Labtek VI</nama>
+		<deskripsi>Sebuah gedung bernama Labtek VI di ITB, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>5000</hargabeli>
+		<hargamortgage>2250</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>900</harga1wifi>
+		<hargasewa>999</hargasewa>
+	</tile>
+	<tile type="TempatNonWifi">
+		<id>16</id>
+		<nama>Parkir Sepeda Barat</nama>
+		<deskripsi>Parkir Sepeda Barat, Anda dapat membeli tempat ini</deskripsi>
+		<hargabeli>2500</hargabeli>
+		<hargamortgage>1250</hargamortgage>
+		<hargasewa>1200</hargasewa>
+		<pemilik>Unknown</pemilik>
+	</tile>
+	<tile type="Tempat">
+		<id>17</id>
+		<nama>CC Timur</nama>
+		<deskripsi>CC Timur, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>5500</hargabeli>
+		<hargamortgage>2750</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>1100</harga1wifi>
+		<hargasewa>1300</hargasewa>
+	</tile>
+	<tile type="Kesempatan">
+		<id>18</id>
+		<deskripsi>Tempat mengambil kartu kesempatan</deskripsi>
+	</tile>
+	<tile type="Tempat">
+		<id>19</id>
+		<nama>Labtek VII</nama>
+		<deskripsi>Labtek VII, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>6000</hargabeli>
+		<hargamortgage>3000</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>1200</harga1wifi>
+		<hargasewa>1400</hargasewa>
+	</tile>
+	<tile type="Tempat">
+		<id>20</id>
+		<nama>Labtek VIII</nama>
+		<deskripsi>Labtek VIII, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>6500</hargabeli>
+		<hargamortgage>3250</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>1300</harga1wifi>
+		<hargasewa>1400</hargasewa>
+	</tile>
+	<tile type="ParkirBebas">
+		<id>21</id>
+		<deskripsi>Parkir SBM, tempat di mana Anda akan mendapat uang hasil dari penarikan pajak melewati LK</deskripsi>
+	</tile>
+	<tile type="Tempat">
+		<id>22</id>
+		<nama>Labtek IX</nama>
+		<deskripsi>Labtek IX, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>7000</hargabeli>
+		<hargamortgage>3500</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>1400</harga1wifi>
+		<hargasewa>1500</hargasewa>
+	</tile>
+	<tile type="Kesempatan">
+		<id>23</id>
+		<deskripsi>Tempat mengambil kartu kesempatan</deskripsi>
+	</tile>
+	<tile type="Tempat">
+		<id>24</id>
+		<nama>GKU Timur</nama>
+		<deskripsi>GKU Timur, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>7500</hargabeli>
+		<hargamortgage>3750</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>1500</harga1wifi>
+		<hargasewa>1600</hargasewa>
+	</tile>
+	<tile type="Tempat">
+		<id>25</id>
+		<nama>Gedung SR</nama>
+		<deskripsi>Gedung SR, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>8000</hargabeli>
+		<hargamortgage>4000</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>1600</harga1wifi>
+		<hargasewa>1700</hargasewa>		
+	</tile>
+	<tile type="TempatNonWifi">
+		<id>26</id>
+		<nama>Parkir Sepeda Utara</nama>
+		<deskripsi>Parkir Sepeda Utara, Anda dapat membeli tempat ini</deskripsi>
+		<hargabeli>2500</hargabeli>
+		<hargamortgage>1250</hargamortgage>
+		<hargasewa>1200</hargasewa>
+		<pemilik>Unknown</pemilik>
+	</tile>
+	<tile type="Tempat">
+		<id>27</id>
+		<nama>Gedung Mesin</nama>
+		<deskripsi>Gedung Mesin, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>8500</hargabeli>
+		<hargamortgage>4250</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>1600</harga1wifi>
+		<hargasewa>1700</hargasewa>
+	</tile>
+	<tile type="Tempat">
+		<id>28</id>
+		<nama>GKU Barat</nama>
+		<deskripsi>GKU Barat, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>9000</hargabeli>
+		<hargamortgage>4500</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>1800</harga1wifi>
+		<hargasewa>1900</hargasewa>
+	</tile>
+	<tile type="TempatNonWifi">
+		<id>29</id>
+		<nama>Kolam Indonesia Tenggelam (INTEL)</nama>
+		<deskripsi>Kolam Indonesia Tenggelam (INTEL), Anda dapat membeli tempat ini</deskripsi>
+		<hargabeli>4000</hargabeli>
+		<hargamortgage>2000</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<hargasewa>2000</hargasewa>
+	</tile>
+	<tile type="Tempat">
+		<id>30</id>
+		<nama>Labtek XI</nama>
+		<deskripsi>Labtek XI, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>9500</hargabeli>
+		<hargamortgage>4750</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>1900</harga1wifi>
+		<hargasewa>2000</hargasewa>
+	</tile>
+	<tile type="MasukPenjara">
+		<id>31</id>
+		<deskripsi>Anda di-skorsing, kembali ke Kosan untuk beberapa saat</deskripsi>
+	</tile>
+	<tile type="Tempat">
+		<id>32</id>
+		<nama>Gedung TI</nama>
+		<deskripsi>Gedung TI, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>10000</hargabeli>
+		<hargamortgage>5000</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>2000</harga1wifi>
+		<hargasewa>2300</hargasewa>
+	</tile>
+	<tile type="Tempat">
+		<id>33</id>
+		<nama>Gedung SBM</nama>
+		<deskripsi>Gedung SBM, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>11000</hargabeli>
+		<hargamortgage>5500</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>2200</harga1wifi>
+		<hargasewa>2500</hargasewa>
+	</tile>
+	<tile type="Kesempatan">
+		<id>34</id>
+		<deskripsi>Tempat mengambil kartu kesempatan</deskripsi>
+	</tile>
+	<tile type="Tempat">
+		<id>35</id>
+		<nama>Comlabs</nama>
+		<deskripsi>Comlabs, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>11500</hargabeli>
+		<hargamortgage>5750</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>2300</harga1wifi>
+		<hargasewa>2700</hargasewa>
+	</tile>
+	<tile type="TempatNonWifi">
+		<id>36</id>
+		<nama>Parkir Sepeda Timur</nama>
+		<deskripsi>Parkir Sepeda Timur, Anda dapat membeli tempat ini</deskripsi>
+		<hargabeli>2500</hargabeli>
+		<hargamortgage>1250</hargamortgage>
+		<hargasewa>1200</hargasewa>
+		<pemilik>Unknown</pemilik>
+	</tile>
+	<tile type="Kesempatan">
+		<id>37</id>
+		<deskripsi>Tempat mengambil kartu kesempatan</deskripsi>
+	</tile>
+	<tile type="Tempat">
+		<id>38</id>
+		<nama>Gedung PAU</nama>
+		<deskripsi>Gedung PAU, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>12500</hargabeli>
+		<hargamortgage>6250</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>2500</harga1wifi>
+		<hargasewa>2700</hargasewa>
+	</tile>
+	<tile type="PajakLK">
+		<id>39</id>
+		<deskripsi>LK, anda harus membayar pajak sebesar ITBR1500 jika melewati tempat ini. Jika pemain dapat membeli LK, permainan akan selesai dan pemain yang membeli LK ini lah yang menjadi pemenang. (Harga beli LK = ITBR 100.000)</deskripsi>
+		<hargapajak>1500</hargapajak>
+		<hargabeli>100000</hargabeli>
+	</tile>
+	<tile type="Tempat">
+		<id>40</id>
+		<nama>Perpustakaan</nama>
+		<deskripsi>Perpustakaan, Anda dapat membeli dan membangun jaringan Wi-Fi di sini</deskripsi>
+		<hargabeli>14000</hargabeli>
+		<hargamortgage>7000</hargamortgage>
+		<pemilik>Unknown</pemilik>
+		<jumlahwifi>0</jumlahwifi>
+		<harga1wifi>2800</harga1wifi>
+		<hargasewa>3000</hargasewa>
+	</tile>
+</tempat>
