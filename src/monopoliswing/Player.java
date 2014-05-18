@@ -5,7 +5,6 @@
  */
 
 package monopoliswing;
-import monopoli.*;
 import java.util.ArrayList;
 
 /**
@@ -112,7 +111,7 @@ public class Player {
             System.out.println(nama + " tidak mempunyai aset");
         }
         else{
-            System.out.println("Aset milik "+nama+". Tempat : ");
+            System.out.println("Tempat : ");
             for(Tiles A :aset){
                 if(A instanceof Tempat){
                     System.out.println(((Tempat)A).getID()+" "+((Tempat)A).getNama());
@@ -135,13 +134,13 @@ public class Player {
                 if(B.getJumlahWifi()!=0){
                     B.setJumlahWifi(0);
                 }
-                B.setMortgage(false);
+                B.setMortgage(true);
                 B.setPemilik("Unknown");
             }
             else{
                 assert(A instanceof TempatNonWifi);
                 TempatNonWifi B = (TempatNonWifi) A;
-                B.setMortgage(false);
+                B.setMortgage(true);
                 B.setPemilik("Unknown");
             }
         }
@@ -156,16 +155,13 @@ public class Player {
 
     public void print(){
 	System.out.println("Nama pemain: " + this.nama);
-        System.out.println("Simbol pemain: " + Symbol);
 	System.out.println("Jumlah uang: " + this.uang);
-	System.out.println("Jumlah aset: " + this.aset.size());
-        System.out.println("Pemain berada di ID: "+posisi.getID());
-        if(this.diskors){
-            System.out.println("Pemain sedang diskors");
-        }
-        else{
-            System.out.println("Pemain tidak sedang diskors");
-        }
+	if (this.status){
+            System.out.println("Pemain dapat melanjutkan permainan");
+	}
+	else {
+            System.out.println("Pemain tidak dapat melanjutkan permainan");
+	}
 	if (this.kartuskors){
             System.out.println("Pemain memiliki kartu skorsing");
 	}
