@@ -1,19 +1,16 @@
 package monopoliswing;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
-
 
 class chanceCard {
 	private int ID;
 	private int IDpop;
 	private String deskripsi;
+        private readxmlfile rd;
         private GamePlay GP;
 	private Deque<Integer> stack = new ArrayDeque<Integer>();
-	private List<Integer> array = new ArrayList<Integer>();
 	private LinkedList<Tiles> ListOfTiles;
 
 	//to do:
@@ -22,13 +19,12 @@ class chanceCard {
 	public chanceCard(GamePlay GP){
 		ID = 0;
 		deskripsi = "";
+                rd = new readxmlfile();
+                rd.readXML();
                 this.GP = GP;
 	}
 	
 	public void printCard(int ID1) {
-		readxmlfile rd = new readxmlfile();
-		rd.readXML();
-
 		ID = rd.getID(ID1);
 		deskripsi = rd.getEff(ID1);
 		System.out.println("Effect: \"" + deskripsi+ "\"");
@@ -43,7 +39,7 @@ class chanceCard {
 	
 	//check if stack is empty
 	public boolean isStackEmpty() {
-		return stack.isEmpty();
+            return stack.isEmpty();
 	}
 
 	//taking top card from stack
@@ -54,18 +50,14 @@ class chanceCard {
 
 	//inserting cards to a stack
 	public void intoStack() {
-		readxmlfile rd = new readxmlfile();
-		rd.readXML();
-
 		for ( int i=1; i <= rd.getSize(); i++ ) {
 			boolean no = false;
 			while (!no) {
-				random();
-				if (!array.contains(ID)) {
+				//random();
+                                ID = 1 + (int)(Math.random() * ((rd.getSize() - 1) + 1));
+				if (!stack.contains(ID)) {
 					stack.push(ID);
 
-					//array storing used ID
-					array.add(ID);
 					no = true;
 					
 				} else {
@@ -102,9 +94,9 @@ class chanceCard {
 
 	//random function
 
-	public void random() {
+	/*public void random() {
 		ID = 1 + (int)(Math.random() * ((16 - 1) + 1));
-	}
+	}*/
 
 	public int getIDpop(){
 		return IDpop;
@@ -116,16 +108,16 @@ class chanceCard {
 
 	public void Effect(Player player){
 		if (IDpop == 1) {
-					// Melanggar peraturan K3L, denda 1.500ITBR
+                    // Melanggar peraturan K3L, denda ITBR 1.500
                     player.kuranguang(1500);
 		}
 		else if (IDpop == 2){
-					//Menceburkan teman ke kolam INTEL, denda 5.000ITBR
-                    player.kuranguang(5000);
+                    //Menceburkan teman ke kolam INTEL, denda ITBR 1.000
+                    player.kuranguang(2000);
 		}
 		else if (IDpop == 3){
-					//Mendapat nilai 100 di kuis OOP, mendapatkan uang sebesar 10.000ITBR
-                    player.tambahuang(10000);
+                    //Mendapat nilai 100 di kuis OOP, mendapatkan uang sebesar ITBR 2.000
+                    player.tambahuang(2000);
 		}
 		else if (IDpop == 4){
                     // Mundur tiga petak
@@ -135,60 +127,72 @@ class chanceCard {
                     // Maju sampai Gedung SR
                     int A = GP.Board.getTile("Gedung SR");
                     int move = A-player.getposisi().getID();
+                    if(move<0){
+                        move+=GP.Board.NumberOfTiles();
+                    }else{
+                        if(player.getposisi().getID()<11){
+                            move--;
+                        }
+                    }
                     GP.Move(player, move);
 		}
 		else if (IDpop == 6){
                     // Maju sampai Parkir Sepeda Selatan, Bila melalui START mendapatkan uang sebesar 20.000ITBR 
                     int A = GP.Board.getTile("Parkir Sepeda Selatan");
                     int move = A-player.getposisi().getID();
+                    if(move<0){
+                        move+=GP.Board.NumberOfTiles();
+                        player.tambahuang(1500);
+                        if(player.getposisi().getID()<11){
+                            move--;
+                        }
+                    }
                     GP.Move(player, move);
 		}
 		else if (IDpop == 7){
-                    // Pindah ke Labtek V
+                    // Mundur ke Labtek V
                     int A = GP.Board.getTile("Labtek V");
-                    int move = player.getposisi().getID()-A;
+                    int move = A-player.getposisi().getID();
+                    if(move>0){
+                        move-=GP.Board.NumberOfTiles();
+                    }
                     GP.Move(player, move);
 		}
 		else if (IDpop == 8){
-					//Karena kesalahan LK, Anda berhak menerima 10.000ITBR
-                    player.tambahuang(10000);
+                    //Karena kesalahan LK, Anda berhak menerima ITBR 3.000
+                    player.tambahuang(3000);
 		}
 		else if (IDpop == 9){
-					// Mendapat voucher makan sebesar 5.000ITBR
-                    player.tambahuang(5000);
+                    // Mendapat voucher makan sebesar ITBR 1.000
+                    player.tambahuang(1000);
 		}
 		else if (IDpop == 10){
-					// Membayar kerusakan alat laboratorium sebesar 8.000ITBR
-					player.kuranguang(8000);
+                    // Membayar kerusakan alat laboratorium sebesar ITBR 3.000
+                    player.kuranguang(3000);
 		}
 		else if (IDpop == 11){
-					// Mendapat tunjangan sebesar 15.000ITBR
-					player.tambahuang(15000);
+                    // Mendapat tunjangan sebesar ITBR 1.000
+                    player.tambahuang(1000);
 		}
 		else if (IDpop == 12){
-					// Menyerempet mobil dosen, bayar 5.000ITBR
-					player.kuranguang(5000);
+                    // Menyerempet mobil dosen, bayar ITBR 2.000
+                    player.kuranguang(2000);
 		}
 		else if (IDpop == 13){
-					// Membayar pajak BPPS sebesar 5000ITBR
-					player.kuranguang(5000);
+                    // Membayar pajak BPPS sebesar ITBR 500
+                    player.kuranguang(500);
 		}
 		else if (IDpop == 14){
-					// Anda ulang tahun dan berhak mendapatkan uang sebesar 5.000ITBR dari himpunan.
-					player.tambahuang(5000);
+                    // Anda ulang tahun dan berhak mendapatkan uang sebesar ITBR 2.000 dari himpunan.
+                    player.tambahuang(2000);
 		}
 		else if (IDpop == 15){
-					// Bebas dari skorsing
-					if (player.Isdiskors()){
-							player.setdiskors(false);
-					}
-					else {
-							player.setkartuskors(true);
-					}			
+                    // Bebas dari skorsing
+                    player.setkartuskors(true);			
 		}
 		else if (IDpop == 16){
-					//Maju lima petak
-					GP.Move(player, 5);		
+                    //Maju lima petak
+                    GP.Move(player, 5);		
 		}
 	}
 	/*public static void main(String[] args){

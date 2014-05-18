@@ -17,7 +17,7 @@ import static org.fusesource.jansi.Ansi.ansi;
 public class ParkirBebas extends Tiles {
     private String deskripsi;
     private int ID;
-    
+    private int PajakTotal;
     private static ParkirBebas parkir = new ParkirBebas();
     
     public static ParkirBebas getSingleton(){
@@ -27,6 +27,7 @@ public class ParkirBebas extends Tiles {
     // konstruktor Tempat
     private ParkirBebas(){
         super();
+        PajakTotal=0;
     }
     
     // set lokasi dari tempat
@@ -63,6 +64,14 @@ public class ParkirBebas extends Tiles {
     public int getID(){
         return ID;
     }
+    public void tambahPajak(int PajakBaru){
+        PajakTotal+=PajakBaru;
+    }
+    public int ambilPajak(){
+        int pajak = PajakTotal;
+        PajakTotal = 0;
+        return pajak;
+    }
     public void printTiles(){
         System.out.println(ansi().fg(Ansi.Color.BLUE).cursor(getX(),getY()).a(" _____"));
         for(int i=1;i<=3;i++){
@@ -73,6 +82,7 @@ public class ParkirBebas extends Tiles {
     }
     public void printInfo(){
         System.out.println("ID = "+ID);
-        System.out.println("Deskripsi ="+deskripsi);
+        System.out.println("Deskripsi = "+deskripsi);
+        System.out.println("Total Pajak = "+PajakTotal);
     }
 }
