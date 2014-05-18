@@ -109,19 +109,31 @@ class chanceCard {
 	public void Effect(Player player){
 		if (IDpop == 1) {
                     // Melanggar peraturan K3L, denda ITBR 1.500
+                    /* post condition */
+                    int jum_uanglama = player.getuang();
                     player.kuranguang(1500);
+                    assert jum_uanglama - player.getuang() == 1500 : "Uang pemain tidak berkurang sejumlah ITBR 1.500";
 		}
 		else if (IDpop == 2){
                     //Menceburkan teman ke kolam INTEL, denda ITBR 1.000
+                    /* post condition */
+                    int jum_uanglama = player.getuang();
                     player.kuranguang(2000);
+                    assert jum_uanglama - player.getuang() == 2000 : "Uang pemain tidak berkurang sejumlah ITBR 2.000";
 		}
 		else if (IDpop == 3){
                     //Mendapat nilai 100 di kuis OOP, mendapatkan uang sebesar ITBR 2.000
+                    /* post condition */
+                    int jum_uanglama = player.getuang();
                     player.tambahuang(2000);
+                    assert player.getuang() - jum_uanglama == 2000 : "Uang pemain tidak bertambah sejumlah ITBR 2.000";
 		}
 		else if (IDpop == 4){
                     // Mundur tiga petak
+                    /* post condition */
+                    int pos_lama = player.getposisi().getID();
                     GP.Move(player, -3);
+                    assert pos_lama - player.getposisi().getID() == 3 : "Posisi pemain tidak mundur tiga petak";
 		}
 		else if (IDpop == 5){
                     // Maju sampai Gedung SR
@@ -135,6 +147,11 @@ class chanceCard {
                         }
                     }
                     GP.Move(player, move);
+                    assert player.getposisi() instanceof Tempat : "Posisi pemain bukan Tempat";
+                    if (player.getposisi() instanceof Tempat){
+                        Tempat new_tempat = (Tempat) player.getposisi();
+                        assert new_tempat.getNama().equals("Gedung SR") : "Posisi pemain tidak berada di gedung SR";
+                    }
 		}
 		else if (IDpop == 6){
                     // Maju sampai Parkir Sepeda Selatan, Bila melalui START mendapatkan uang sebesar 20.000ITBR 
@@ -148,6 +165,11 @@ class chanceCard {
                         }
                     }
                     GP.Move(player, move);
+                    assert player.getposisi() instanceof TempatNonWifi : "Posisi pemain bukan TempatNonWifi";
+                    if (player.getposisi() instanceof TempatNonWifi){
+                        TempatNonWifi new_tempat = (TempatNonWifi) player.getposisi();
+                        assert new_tempat.getNama().equals("Parkir Sepeda Selatan") : "Posisi pemain tidak berada di Parkir Sepeda Selatan";
+                    }
 		}
 		else if (IDpop == 7){
                     // Mundur ke Labtek V
@@ -157,42 +179,72 @@ class chanceCard {
                         move-=GP.Board.NumberOfTiles();
                     }
                     GP.Move(player, move);
+                    assert player.getposisi() instanceof Tempat : "Posisi pemain bukan Tempat";
+                    if (player.getposisi() instanceof Tempat){
+                        Tempat new_tempat = (Tempat) player.getposisi();
+                        assert new_tempat.getNama().equals("Labtek V") : "Posisi pemain tidak berada di gedung SR";
+                    }
 		}
 		else if (IDpop == 8){
                     //Karena kesalahan LK, Anda berhak menerima ITBR 3.000
+                    /* post condition */
+                    int jum_uanglama = player.getuang();
                     player.tambahuang(3000);
+                    assert player.getuang() - jum_uanglama == 3000 : "Uang pemain tidak bertambah sejumlah ITBR 3.000";
 		}
 		else if (IDpop == 9){
                     // Mendapat voucher makan sebesar ITBR 1.000
+                    /* post condition */
+                    int jum_uanglama = player.getuang();
                     player.tambahuang(1000);
+                    assert player.getuang() - jum_uanglama == 1000 : "Uang pemain tidak bertambah sejumlah ITBR 1.000";
 		}
 		else if (IDpop == 10){
                     // Membayar kerusakan alat laboratorium sebesar ITBR 3.000
+                    /* post condition */
+                    int jum_uanglama = player.getuang();
                     player.kuranguang(3000);
+                    assert jum_uanglama - player.getuang() == 3000 : "Uang pemain tidak berkurang sejumlah ITBR 3.000";
 		}
 		else if (IDpop == 11){
                     // Mendapat tunjangan sebesar ITBR 1.000
+                    /* post condition */
+                    int jum_uanglama = player.getuang();
                     player.tambahuang(1000);
+                    assert player.getuang() - jum_uanglama == 1000 : "Uang pemain tidak bertambah sejumlah ITBR 1.000";
 		}
 		else if (IDpop == 12){
                     // Menyerempet mobil dosen, bayar ITBR 2.000
+                    /* post condition */
+                    int jum_uanglama = player.getuang();
                     player.kuranguang(2000);
+                    assert jum_uanglama - player.getuang() == 2000 : "Uang pemain tidak berkurang sejumlah ITBR 2.000";
 		}
 		else if (IDpop == 13){
                     // Membayar pajak BPPS sebesar ITBR 500
+                    /* post condition */
+                    int jum_uanglama = player.getuang();
                     player.kuranguang(500);
+                    assert jum_uanglama - player.getuang() == 500 : "Uang pemain tidak berkurang sejumlah ITBR 500";
 		}
 		else if (IDpop == 14){
                     // Anda ulang tahun dan berhak mendapatkan uang sebesar ITBR 2.000 dari himpunan.
+                    /* post condition */
+                    int jum_uanglama = player.getuang();
                     player.tambahuang(2000);
+                    assert player.getuang() - jum_uanglama == 2000 : "Uang pemain tidak bertambah sejumlah ITBR 2.000";
 		}
 		else if (IDpop == 15){
                     // Bebas dari skorsing
-                    player.setkartuskors(true);			
+                    player.setkartuskors(true);	
+                    assert player.havekartuskors() : "Pemain masih tidak memiliki kartu bebas skorsing";
 		}
 		else if (IDpop == 16){
                     //Maju lima petak
-                    GP.Move(player, 5);		
+                    /* post condition */
+                    int pos_lama = player.getposisi().getID();
+                    GP.Move(player, 5);
+                    assert player.getposisi().getID() - pos_lama == 5 : "Posisi pemain tidak maju lima petak";  
 		}
 	}
 	/*public static void main(String[] args){
