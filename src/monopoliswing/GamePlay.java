@@ -1,20 +1,17 @@
-package monopoliswing;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+package monopoliswing;
 
-
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static monopoliswing.BoardView.BOARD_HEIGHT;
+import static monopoli.BoardView.BOARD_HEIGHT;
 import org.fusesource.jansi.Ansi;
 import static org.fusesource.jansi.Ansi.ansi;
 
@@ -29,13 +26,11 @@ public class GamePlay {
     private int dadu1;
     private int dadu2;
     private int kesempatankocok;
-    private static int TotalPajak;
     private chanceCard Kartu;
     private static boolean GameOver;
     public BoardView Board;
     public GamePlay(){
         Board = new BoardView();
-        TotalPajak = 0;
         Q = new LinkedList<>();
         System.out.println("Berapa orang yang akan bermain (max 4) ? ");
         Scanner read = new Scanner(System.in);
@@ -71,7 +66,7 @@ public class GamePlay {
         GameOver =false;
     }
     public void Status(){
-        System.out.println("Current Player : "+ ansi().bold().a(CurrentPlayer.getSymbol()+" "+CurrentPlayer.getnama()).boldOff());
+        System.out.println("Current Player : "+ ansi().bold().a(CurrentPlayer.getSymbol()+" "+CurrentPlayer.getnama()+" (Player ke-"+CurrentPlayer.getID()+")").boldOff());
         System.out.println("Current Money  : "+ ansi().bold().a("ITBR "+CurrentPlayer.getuang()).boldOff());
     }
     public void KocokDadu(){
@@ -286,7 +281,8 @@ public class GamePlay {
                 CurrentPlayer = Q.peek();
                 kesempatankocok = 3;
                 System.out.println("Tekan ENTER");
-                try {int a =System.in.read();} catch (IOException ex) {}
+                Scanner read = new Scanner(System.in);
+                while(!read.nextLine().equals(""));
                 System.out.println(ansi().cursor(BOARD_HEIGHT, 0).eraseScreen(Ansi.Erase.FORWARD));
             }
         }
@@ -298,7 +294,7 @@ public class GamePlay {
     }
     public void Start(){
         String aksi;
-        int lokasi;
+        int lokasi,ID;
         kesempatankocok = 3;
         System.out.print(ansi().eraseScreen());
         Kartu.intoStack();
@@ -338,10 +334,18 @@ public class GamePlay {
                     SellWifi(lokasi);
                     break;
                 case "viewaset":
-                    int ID = read.nextInt();
+                    ID = read.nextInt();
                     //harusnya assert
                     if((ID>0)&&(ID<=Q.size())){
                         ViewAset(ID);
+                    }
+                    else{System.out.println("Salah masukan nomor");}
+                    break;
+                case "infoplayer":
+                    ID = read.nextInt();
+                    //harusnya assert
+                    if((ID>0)&&(ID<=Q.size())){
+                        InfoPlayer(ID);
                     }
                     else{System.out.println("Salah masukan nomor");}
                     break;
@@ -371,7 +375,7 @@ public class GamePlay {
         }while((Q.size() != 1) && (!GameOver) &&(!aksi.equals("exit")));
         if(GameOver){
             System.out.println("Pemenangnya adalah " + CurrentPlayer.getnama());
-            try {System.in.read();}catch (IOException ex) {}
+            while(!read.nextLine().equals(""));
         }    
     }
     public void PutBoard(){
@@ -387,6 +391,13 @@ public class GamePlay {
             }
         }
     }
+    public void InfoPlayer(int ID){
+        for(Player A : Q){
+            if(A.getID()==ID){
+                A.print();
+            }
+        }
+    }
     public void PrintInfoTile(int lokasi) {
         Board.getTile(lokasi).printInfo();
     }
@@ -399,6 +410,7 @@ public class GamePlay {
         System.out.println(ansi().bold().a("buywifi X").boldOff()+" -> Memasang 1 wifi di tile X");
         System.out.println(ansi().bold().a("sellwifi X").boldOff()+" -> Memasang 1 wifi di tile X");
         System.out.println(ansi().bold().a("viewaset X").boldOff()+" -> Melihat aset player ke-X");
+        System.out.println(ansi().bold().a("infoplayer X").boldOff()+" -> Melihat info player ke-X");
         System.out.println(ansi().bold().a("infotile X").boldOff()+" -> Melihat info tile X");
         System.out.println(ansi().bold().a("bangkrut").boldOff()+" -> Menyatakan bangkrut");
         System.out.println(ansi().bold().a("endturn").boldOff()+" -> Mengakhiri giliran player");
@@ -477,37 +489,32 @@ public class GamePlay {
         if(CurrentPlayer.getposisi() instanceof PajakBPPS){
             int HargaPajak =((PajakBPPS)CurrentPlayer.getposisi()).getHargapajak();
             CurrentPlayer.kuranguang(HargaPajak);
-            TotalPajak+=HargaPajak;
+            ParkirBebas A = ((ParkirBebas)Board.getTile(21));
+            A.tambahPajak(HargaPajak);
             System.out.println(CurrentPlayer.getnama() + " membayar BPPS sebesar "+HargaPajak);
         }
         else if(CurrentPlayer.getposisi() instanceof PajakLK){
             if(CurrentPlayer.getuang()>=((PajakLK)CurrentPlayer.getposisi()).getHargabeli()){
                 System.out.println("Uang anda cukup untuk membeli LK. Tekan ENTER untuk membeli");
-                try {System.in.read();} catch (IOException ex) {}
+                Scanner read = new Scanner(System.in);
+                while(!read.nextLine().equals(""));
                 GameOver = true;
             }
             else{
                 int HargaPajak =((PajakLK)CurrentPlayer.getposisi()).getHargapajak();
                 CurrentPlayer.kuranguang(HargaPajak);
-                TotalPajak+=HargaPajak;
+                ParkirBebas A = ((ParkirBebas)Board.getTile(21));
+                A.tambahPajak(HargaPajak);
                 System.out.println(CurrentPlayer.getnama() + " membayar pajak LK sebesar "+HargaPajak);
             }
         }
         else if(CurrentPlayer.getposisi() instanceof Kesempatan){
-            System.out.println("Anda mengambil kartu kesempatan");
-            Kartu.popTop();
-            System.out.println("Tekan ENTER");
-            try {System.in.read();} catch (IOException ex) {}
-            System.out.print(ansi().cursor(BOARD_HEIGHT+3, 0).eraseScreen(Ansi.Erase.FORWARD));
-            Kartu.Effect(CurrentPlayer);
-            if(Kartu.isStackEmpty()){
-                Kartu.intoStack();
-            }
+            AmbilKesempatan();
         }
         else if(CurrentPlayer.getposisi() instanceof ParkirBebas){
-            CurrentPlayer.tambahuang(TotalPajak);
-            System.out.println(CurrentPlayer.getnama() + " mendapat uang sebesar "+TotalPajak);
-            TotalPajak = 0;
+            int Pajak = ((ParkirBebas)CurrentPlayer.getposisi()).ambilPajak();
+            CurrentPlayer.tambahuang(Pajak);
+            System.out.println(CurrentPlayer.getnama() + " mendapat uang sebesar "+Pajak);
         }
         else if(CurrentPlayer.getposisi() instanceof MasukPenjara){
             CurrentPlayer.setposisi(Board.getTile(11));
@@ -553,6 +560,19 @@ public class GamePlay {
         }
         else{
             assert((CurrentPlayer.getposisi() instanceof StartTempat/*instanceof Kosan*/));
+        }
+    }
+
+    private void AmbilKesempatan() {
+        System.out.println("Anda mengambil kartu kesempatan");
+        Kartu.popTop();
+        System.out.println("Tekan ENTER");
+        Scanner read = new Scanner(System.in);
+        while(!read.nextLine().equals(""));
+        System.out.print(ansi().cursor(BOARD_HEIGHT+3, 0).eraseScreen(Ansi.Erase.FORWARD));
+        Kartu.Effect(CurrentPlayer);
+        if(Kartu.isStackEmpty()){
+            Kartu.intoStack();
         }
     }
 }

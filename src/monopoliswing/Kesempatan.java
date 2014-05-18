@@ -1,8 +1,6 @@
 package monopoliswing;
 
 
-
-
 import org.fusesource.jansi.Ansi;
 import static org.fusesource.jansi.Ansi.ansi;
 

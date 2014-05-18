@@ -1,12 +1,10 @@
-package monopoliswing;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-
+package monopoliswing;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -42,6 +40,24 @@ public class Monopoli {
         }
     }
     
+    public static void Help(){
+        BufferedReader in = null;
+        try {
+            in = new BufferedReader(new FileReader("aturan.txt"));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Monopoli.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            String line;
+        try {
+            while((line = in.readLine()) != null)
+            {
+                System.out.println(line);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Monopoli.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public static int MainMenu(){
         int pilihan;
         Scanner read = new Scanner(System.in);
@@ -60,8 +76,8 @@ public class Monopoli {
         AnsiConsole.systemInstall();
         AnsiConsole.out().println(ansi().eraseScreen().cursor(1, 1));
         int pilihan = 1;
-        //Logo();
-        //pilihan = MainMenu();
+        Logo();
+        pilihan = MainMenu();
         while(pilihan !=3){
             if(pilihan == 1){
                 GamePlay GP = new GamePlay();
@@ -69,7 +85,13 @@ public class Monopoli {
                 pilihan = MainMenu();
             }
             else if(pilihan == 2){
-                System.out.println("ini adalah help");
+                Help();
+                System.out.println("\n\n\nTekan ENTER untuk kembali ke menu utama\n");
+                Scanner read = new Scanner(System.in);
+                String enter = read.nextLine();
+                AnsiConsole.systemInstall();
+                AnsiConsole.out().println(ansi().eraseScreen().cursor(1, 1));
+                Logo();
                 pilihan = MainMenu();
             }
         }
