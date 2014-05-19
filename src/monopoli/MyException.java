@@ -9,9 +9,19 @@
  * @author Riska IF
  */
 public class MyException extends Exception{
-    public MyException(String exc){
-        super(exc);
+
+    /**
+     * Kelas Khusus Exception
+     * @param ex
+     */
+    public MyException(String ex){
+        super(ex);
     }
+
+    /**
+     * Mendapatkan message error dari exception
+     * @return message exception
+     */
     public String getMessage(){
         return super.getMessage();
     }

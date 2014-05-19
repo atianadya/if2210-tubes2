@@ -20,6 +20,10 @@ public class ParkirBebas extends Tiles {
     private int PajakTotal;
     private static ParkirBebas parkir = new ParkirBebas();
     
+    /**
+     * Singleton ParkirBebas
+     * @return kelas ParkirBebas
+     */
     public static ParkirBebas getSingleton(){
         return parkir;
     }
@@ -31,47 +35,97 @@ public class ParkirBebas extends Tiles {
     }
     
     // set lokasi dari tempat
-    public void setLokasi(int a, int b){
+
+    /**
+     * Setter lokasi ParkirBebas dari Tempat
+     * @param a koordinat
+     * @param b koordinat
+     */
+        public void setLokasi(int a, int b){
         setKoordinat(a,b);
     }
     
     // getter kordinat X
-    public int getKoorX(){
+
+    /**
+     * getter koordinat X
+     * @return koordinat X
+     */
+        public int getKoorX(){
         return getX();
     }
     
     // getter koordinat Y
-    public int getKoorY(){
+
+    /**
+     * getter koordinat Y
+     * @return koordinat Y
+     */
+        public int getKoorY(){
         return getY();
     }
     
     // set deskripsi
-    public void setDesc(String a){
+
+    /**
+     * setter deskripsi ParkirBebas
+     * @param a akan diset menjadi deskripsi ParkirBebas
+     */
+        public void setDesc(String a){
         deskripsi = a;
     }
     
     // get deskripsi
-    public String getDesc(){
+
+    /**
+     * getter deskripsi ParkirBebas
+     * @return deskripsi ParkirBebas
+     */
+        public String getDesc(){
         return deskripsi;
     }
     
     // set ID
-    public void setID(int a){
+
+    /**
+     * setter ID ParkirBebas
+     * @param a akan diset menjadi ID ParkirBebas
+     */
+        public void setID(int a){
         ID = a;
     }
     
     // get ID
-    public int getID(){
+
+    /**
+     * getter ID ParkirBebas
+     * @return ID ParkirBebas
+     */
+        public int getID(){
         return ID;
     }
+
+    /**
+     * Menambah PajakTotal pada ParkirBebas
+     * @param PajakBaru akan ditambahkan pada PajakTotal pada ParkirBebas
+     */
     public void tambahPajak(int PajakBaru){
         PajakTotal+=PajakBaru;
     }
+
+    /**
+     * Mengambil semua PajakTotal pada ParkirBebas
+     * @return PajakTotal yang sudah diambil semua
+     */
     public int ambilPajak(){
         int pajak = PajakTotal;
         PajakTotal = 0;
         return pajak;
     }
+
+    /**
+     * Mencetak Tiles ParkirBebas ke layar
+     */
     public void printTiles(){
         System.out.println(ansi().fg(Ansi.Color.BLUE).cursor(getX(),getY()).a(" _____"));
         for(int i=1;i<=3;i++){
@@ -80,6 +134,10 @@ public class ParkirBebas extends Tiles {
         System.out.println(ansi().cursor(getX()+4,getY()).a("|_____|").fg(Ansi.Color.WHITE));
         System.out.println(ansi().cursor(getX()+1,getY()+1).a(ID));
     }
+
+    /**
+     * Mencetak info ParkirBebas ke layar
+     */
     public void printInfo(){
         System.out.println("ID = "+ID);
         System.out.println("Deskripsi = "+deskripsi);

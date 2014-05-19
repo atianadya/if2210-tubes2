@@ -10,6 +10,11 @@
  */
 public class UseCustomException {
     MyException newExc=new MyException("custom Exception");
+
+    /**
+     * Konstruktor UseCustomException tanpa parameter
+     * @throws MyException
+     */
     public UseCustomException() throws MyException{
         System.out.println("....");
         throw newExc;
