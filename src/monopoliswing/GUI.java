@@ -126,7 +126,7 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoliswing/sprite/riska.png"))); // NOI18N
         jPanel1.add(jLabel51);
-        jLabel51.setBounds(50, 40, 20, 0);
+        jLabel51.setBounds(50, 40, 20, 27);
 
         jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoliswing/sprite/midum.png"))); // NOI18N
         jPanel1.add(jLabel50);
@@ -134,7 +134,7 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoliswing/sprite/martres.png"))); // NOI18N
         jPanel1.add(jLabel49);
-        jLabel49.setBounds(10, 40, 20, 0);
+        jLabel49.setBounds(10, 40, 20, 25);
 
         jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoliswing/sprite/atia.png"))); // NOI18N
         jPanel1.add(jLabel47);
@@ -392,7 +392,11 @@ public class GUI extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(1100, 730));
         jPanel2.setLayout(null);
 
-        jButton7.setText("Play MONOPOLI");
+        jButton7.setBackground(new java.awt.Color(255, 204, 204));
+        jButton7.setFont(new java.awt.Font("Scribble Scrawl", 0, 10)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(102, 51, 255));
+        jButton7.setText("PLAY MONOPOLI");
+        jButton7.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 204, 255), new java.awt.Color(153, 153, 255)));
         jButton7.setMinimumSize(new java.awt.Dimension(160, 23));
         jButton7.setPreferredSize(new java.awt.Dimension(160, 60));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -403,16 +407,24 @@ public class GUI extends javax.swing.JFrame {
         jPanel2.add(jButton7);
         jButton7.setBounds(800, 200, 190, 60);
 
+        jButton8.setBackground(new java.awt.Color(255, 204, 204));
+        jButton8.setFont(new java.awt.Font("Scribble Scrawl", 0, 11)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(102, 51, 255));
         jButton8.setText("HELP");
+        jButton8.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 204, 255), new java.awt.Color(153, 153, 255)));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
         jPanel2.add(jButton8);
-        jButton8.setBounds(800, 320, 190, 60);
+        jButton8.setBounds(800, 330, 190, 60);
 
+        jButton9.setBackground(new java.awt.Color(255, 204, 204));
+        jButton9.setFont(new java.awt.Font("Scribble Scrawl", 0, 11)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(102, 51, 255));
         jButton9.setText("EXIT");
+        jButton9.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 204, 255), new java.awt.Color(153, 153, 255)));
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
@@ -426,14 +438,17 @@ public class GUI extends javax.swing.JFrame {
         jPanel2.add(jLabel52);
         jLabel52.setBounds(0, 0, 1100, 730);
 
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel3.setForeground(new java.awt.Color(204, 204, 255));
         jPanel3.setPreferredSize(new java.awt.Dimension(1100, 730));
         jPanel3.setLayout(null);
 
         jLabel41.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel41.setText("Ini HELP");
+        jLabel41.setText("HELP");
         jPanel3.add(jLabel41);
         jLabel41.setBounds(55, 31, 197, 57);
 
+        jButton10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton10.setText("Kembali");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -441,7 +456,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton10);
-        jButton10.setBounds(270, 40, 190, 40);
+        jButton10.setBounds(800, 40, 190, 40);
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -470,13 +485,15 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButton13);
-        jButton13.setBounds(510, 400, 57, 23);
+        jButton13.setBounds(505, 400, 70, 40);
         jPanel4.add(jSpinner1);
-        jSpinner1.setBounds(570, 180, 60, 40);
+        jSpinner1.setBounds(580, 180, 50, 30);
 
+        jLabel42.setFont(new java.awt.Font("Scribble Scrawl", 0, 8)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(153, 255, 255));
         jLabel42.setText("Masukkan jumlah pemain");
         jPanel4.add(jLabel42);
-        jLabel42.setBounds(430, 180, 150, 30);
+        jLabel42.setBounds(390, 180, 190, 30);
 
         jLabel43.setText("Player 1");
         jPanel4.add(jLabel43);
@@ -501,9 +518,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButton14);
-        jButton14.setBounds(650, 190, 47, 23);
-
-        back.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\back.jpg")); // NOI18N
+        jButton14.setBounds(650, 180, 47, 30);
         jPanel4.add(back);
         back.setBounds(360, 130, 370, 340);
 
