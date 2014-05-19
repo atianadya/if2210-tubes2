@@ -131,9 +131,9 @@ class chanceCard {
 		else if (IDpop == 4){
                     // Mundur tiga petak
                     /* post condition */
-                    int pos_lama = player.getposisi().getID();
+                    //int pos_lama = player.getposisi().getID();
                     GP.Move(player, -3);
-                    assert pos_lama - player.getposisi().getID() == 3 : "Posisi pemain tidak mundur tiga petak";
+                    //assert pos_lama - player.getposisi().getID() == 3 : "Posisi pemain tidak mundur tiga petak";
 		}
 		else if (IDpop == 5){
                     // Maju sampai Gedung SR
@@ -141,11 +141,11 @@ class chanceCard {
                     int move = A-player.getposisi().getID();
                     if(move<0){
                         move+=GP.Board.NumberOfTiles();
-                    }else{
-                        if(player.getposisi().getID()<11){
-                            move--;
-                        }
                     }
+                    if((player.getposisi().getID()<11) || (player.getposisi().getID() > A)){
+                        move--;
+                    }
+                    
                     GP.Move(player, move);
                     assert player.getposisi() instanceof Tempat : "Posisi pemain bukan Tempat";
                     if (player.getposisi() instanceof Tempat){
@@ -182,7 +182,7 @@ class chanceCard {
                     assert player.getposisi() instanceof Tempat : "Posisi pemain bukan Tempat";
                     if (player.getposisi() instanceof Tempat){
                         Tempat new_tempat = (Tempat) player.getposisi();
-                        assert new_tempat.getNama().equals("Labtek V") : "Posisi pemain tidak berada di gedung SR";
+                        assert new_tempat.getNama().equals("Labtek V") : "Posisi pemain tidak berada di Labtek V";
                     }
 		}
 		else if (IDpop == 8){
@@ -242,9 +242,9 @@ class chanceCard {
 		else if (IDpop == 16){
                     //Maju lima petak
                     /* post condition */
-                    int pos_lama = player.getposisi().getID();
+                    //int pos_lama = player.getposisi().getID();
                     GP.Move(player, 5);
-                    assert player.getposisi().getID() - pos_lama == 5 : "Posisi pemain tidak maju lima petak";  
+                    //assert player.getposisi().getID() - pos_lama == 5 : "Posisi pemain tidak maju lima petak";  
 		}
 	}
 	/*public static void main(String[] args){
