@@ -8,27 +8,42 @@ public class Kesempatan extends Tiles {
     private String deskripsi;
     private int ID;
     
-    // konstruktor Tempat
-    public Kesempatan(){
+    /**
+     * Konstruktor Kesempatan tanpa parameter
+     */
+        public Kesempatan(){
         super();
     }
     
-    // set lokasi dari tempat
-    public void setLokasi(int a, int b){
+    /**
+     * Mengeset lokasi dari Kesempatan
+     * @param a koordinat
+     * @param b koordinat
+     */
+        public void setLokasi(int a, int b){
         setKoordinat(a,b);
     }
     
-    // getter kordinat X
-    public int getKoorX(){
+    /**
+     * Getter koordinat X
+     * @return nilai integer x
+     */
+        public int getKoorX(){
         return getX();
     }
     
-    // getter koordinat Y
-    public int getKoorY(){
+    /**
+     * Getter koordinat Y
+     * @return nilai integer y
+     */
+        public int getKoorY(){
         return getY();
     }
     
-    // set deskripsi
+    /**
+     *
+     * @param a
+     */
     public void setDesc(String a){
         deskripsi = a;
     }
