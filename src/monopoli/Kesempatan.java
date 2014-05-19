@@ -41,29 +41,43 @@ public class Kesempatan extends Tiles {
     }
     
     /**
-     *
-     * @param a
+     *Setter deskripsi
+     * @param a String yang akan di set ke deskripsi kesempatan
      */
     public void setDesc(String a){
         deskripsi = a;
     }
     
-    // get deskripsi
-    public String getDesc(){
+ 
+    /**
+     * getter deskripsi
+     * @return deskripsi
+     */
+        public String getDesc(){
         return deskripsi;
     }
     
-    // set ID
-    @Override
+    /**
+     * set ID
+     * @param a integer yang akan di set ke ID kesempatan
+     */
+        @Override
     public void setID(int a){
         ID = a;
     }
     
-    // get ID
-    @Override
+    /**
+     * get ID
+     * @return ID
+     */
+        @Override
     public int getID(){
         return ID;
     }
+
+    /**
+     * mencetak Tiles kesempatan dengan ID dan warna yang unik ke layar
+     */
     @Override
     public void printTiles(){
         System.out.println(ansi().fg(Ansi.Color.MAGENTA).cursor(getX(),getY()).a(" _____"));
@@ -73,6 +87,10 @@ public class Kesempatan extends Tiles {
         System.out.println(ansi().cursor(getX()+4,getY()).a("|_____|").fg(Ansi.Color.WHITE));
         System.out.println(ansi().cursor(getX()+1,getY()+1).a(ID));
     }
+
+    /**
+     * mencetak ID dan deskripsi kesempatan
+     */
     @Override
     public void printInfo(){
         System.out.println("ID = "+ID);
