@@ -22,6 +22,9 @@ import org.fusesource.jansi.AnsiConsole;
  */
 public class Monopoli {
 
+    /**
+     * Menampilkan gambar logo "Monopoli ITB"
+     */
     public static void Logo() {
         BufferedReader in = null;
         try {
@@ -40,6 +43,9 @@ public class Monopoli {
         }
     }
     
+    /**
+     * Menampilkan menu Help (aturan bermain monopoli ITB)
+     */
     public static void Help(){
         BufferedReader in = null;
         try {
@@ -58,6 +64,10 @@ public class Monopoli {
         }
     }
     
+    /**
+     * Menu utama Permainan Monopoli ITB
+     * @return pilihan
+     */
     public static int MainMenu(){
         int pilihan;
         Scanner read = new Scanner(System.in);
@@ -72,6 +82,11 @@ public class Monopoli {
         }while((pilihan<1) || (pilihan>3));
         return pilihan;
     }
+
+    /**
+     * Main Program
+     * @param args
+     */
     public static void main(String[] args) {
         AnsiConsole.systemInstall();
         AnsiConsole.out().println(ansi().eraseScreen().cursor(1, 1));

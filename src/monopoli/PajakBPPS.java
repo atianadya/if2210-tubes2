@@ -11,6 +11,10 @@ public class PajakBPPS extends Tiles {
     
     private static PajakBPPS pajakBPPS = new PajakBPPS();
     
+    /**
+     * Singleton dari PajakBPPS
+     * @return kelas PajakBPPS
+     */
     public static PajakBPPS getSingleton(){
         return pajakBPPS;
     }
@@ -20,50 +24,69 @@ public class PajakBPPS extends Tiles {
         super();
     }
     
-    // set lokasi dari tempat
-    public void setLokasi(int a, int b){
-        setKoordinat(a,b);
-    }
-    
-    // getter kordinat X
-    public int getKoorX(){
-        return getX();
-    }
-    
-    // getter koordinat Y
-    public int getKoorY(){
-        return getY();
-    }
-    
     // set deskripsi
-    public void setDesc(String a){
+
+    /**
+     * setter deskripsi PajakBPPS
+     * @param a akan diset untuk deskripsi PajakBPPS
+     */
+        public void setDesc(String a){
         deskripsi = a;
     }
     
     // get deskripsi
-    public String getDesc(){
+
+    /**
+     * getter deskripsi PajakBPPS
+     * @return deskripsi PajakBPPS
+     */
+        public String getDesc(){
         return deskripsi;
     }
     
     // set ID
-    public void setID(int a){
+
+    /**
+     * Setter ID PajakBPPS
+     * @param a akan diset menjadi ID PajakBPPS 
+     */
+        public void setID(int a){
         ID = a;
     }
     
     // get ID
-    public int getID(){
+
+    /**
+     * getter ID PajakBPPS
+     * @return ID PajakBPPS
+     */
+        public int getID(){
         return ID;
     }
 
     // set harga pajak
-    public void setHargapajak(int a){
+
+    /**
+     * setter Hargapajak PajakBPPS
+     * @param a akan diset sebagai Hargapajak PajakBPPS
+     */
+        public void setHargapajak(int a){
         hargapajak = a;
     }
 
     // get harga pajak
-    public int getHargapajak(){
+
+    /**
+     * getter Hargapajak PajakBPPS
+     * @return Hargapajak PajakBPPS
+     */
+        public int getHargapajak(){
         return hargapajak;
     }
+
+    /**
+     * Mencetak Tiles PajakBPPS ke layar
+     */
     public void printTiles(){
         System.out.println(ansi().fg(Ansi.Color.RED).cursor(getX(),getY()).a(" _____"));
         for(int i=1;i<=3;i++){
@@ -72,6 +95,10 @@ public class PajakBPPS extends Tiles {
         System.out.println(ansi().cursor(getX()+4,getY()).a("|_____|").fg(Ansi.Color.WHITE));
         System.out.println(ansi().cursor(getX()+1,getY()+1).a(ID));
     }
+
+    /**
+     * Mencetak informasi PajakBPPS ke layar
+     */
     public void printInfo(){
         System.out.println("ID = "+ID);
         System.out.println("Deskripsi ="+deskripsi);

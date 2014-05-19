@@ -22,135 +22,230 @@ public class Tempat extends Tiles{
     private boolean mortgage;
     
     // konstruktor Tempat
-    public Tempat(){
+
+    /**
+     * Konstruktor Tempat tanpa parameter
+     */
+        public Tempat(){
         super();
         jumlahWifi = 0;
         mortgage = false;
     }
     
-    // set lokasi dari tempat
-    public void setLokasi(int a, int b){
-        setKoordinat(a,b);
-    }
-    
-    // getter kordinat X
-    public int getKoorX(){
-        return getX();
-    }
-    
-    // getter koordinat Y
-    public int getKoorY(){
-        return getY();
-    }
-    
     // set nama dari Tempat
-    public void setNama(String a){
+
+    /**
+     * setter nama Tempat
+     * @param a akan diset menjadi nama Tempat
+     */
+        public void setNama(String a){
         nama = a;
     }
     
     // get nama dari Tempat
-    public String getNama(){
+
+    /**
+     * getter nama Tempat
+     * @return nama Tempat
+     */
+        public String getNama(){
         return nama;
     }
     
     // set deskripsi Tempat
-    public void setDeskripsi(String a){
+
+    /**
+     * setter deskripsi Tempat
+     * @param a akan diset menjadi deskripsi Tempat
+     */
+        public void setDeskripsi(String a){
         deskripsi = a;
     }
     
     // get deskripsi Tempat
-    public String getDesc(){
+
+    /**
+     * getter deskripsi Tempat
+     * @return deskripsi Tempat
+     */
+        public String getDesc(){
         return deskripsi;
     }
     
     // set ID Tempat
-    @Override
+
+    /**
+     * setter ID Tempat
+     * @param i akan diset menjadi ID Tempat
+     */
+        @Override
     public void setID(int i){
         ID = i;
     }
     
     // get ID Tempat
-    @Override
+
+    /**
+     * getter ID Tempat
+     * @return ID Tempat
+     */
+        @Override
     public int getID(){
         return ID;
     }
     
     // set harga beli Tempat
-    public void setHargaBeli(int a){
+
+    /**
+     * setter hargaBeli Tempat
+     * @param a akan diset menjadi hargaBeli Tempat
+     */
+        public void setHargaBeli(int a){
         hargaBeli = a;
     }
     
     // get harga beli Tempat
-    public int getHargaBeli(){
+
+    /**
+     * getter hargaBeli Tempat
+     * @return hargaBeli Tempat
+     */
+        public int getHargaBeli(){
         return hargaBeli;
     }
     
     // set harga sewa Tempat
-    public void setHargaSewa(int a){
+
+    /**
+     * setter hargaSewa Tempat
+     * @param a akan diset menjadi hargaSewa Tempat
+     */
+        public void setHargaSewa(int a){
         hargaSewa = a;
     }
     
     // get harga sewa Tempat
-    public int getHargaSewa(){
+
+    /**
+     * getter hargaSewa Tempat
+     * @return hargaSewa Tempat
+     */
+        public int getHargaSewa(){
         return hargaSewa;
     }
     
     // set harga mortgage Tempat
-    public void setHargaMortgage(int a){
+
+    /**
+     * setter hargaMortgage Tempat
+     * @param a akan diset menjadi hargaMortgage Tempat
+     */
+        public void setHargaMortgage(int a){
         hargaMortgage = a;
     }
     
     // get harga mortgage Tempat
-    public int getHargaMortgage(){
+
+    /**
+     * getter hargaMortgage Tempat
+     * @return hargaMortgage Tempat
+     */
+        public int getHargaMortgage(){
         return hargaMortgage;
     }
     
     // set pemilik dari Tempat
-    public void setPemilik(String x){
+
+    /**
+     * setter pemilik Tempat
+     * @param x akan diset menjadi pemilik Tempat
+     */
+        public void setPemilik(String x){
         pemilik = x;
     }
     
     // get pemilik dari Tempat
-    public String getPemilik(){
+
+    /**
+     * getter pemilik Tempat
+     * @return pemilik Tempat
+     */
+        public String getPemilik(){
         return pemilik;
     }
     
     // set harga wifi
-    public void setHargaWifi(int a){
+
+    /**
+     * setter harga1Wifi Tempat
+     * @param a akan diset menjadi harga1Wifi Tempat
+     */
+        public void setHargaWifi(int a){
         harga1Wifi = a;
     }
     
     // get harga 1 wifi
-    public int getHargaWifi(){
+
+    /**
+     * getter harga1Wifi Tempat
+     * @return harga1Wifi Tempat
+     */
+        public int getHargaWifi(){
         return harga1Wifi;
     }
     
     // menambah Wifi
-    public void tambahkanWifi(){
+
+    /**
+     * menambahkan jumlah wifi
+     */
+        public void tambahkanWifi(){
         jumlahWifi++;
     }
     
     // mengurangi Wifi
-    public void kurangiWifi(){
+
+    /**
+     * mengurangi jumlah wifi
+     */
+        public void kurangiWifi(){
         if (jumlahWifi > 0) {
             jumlahWifi--;
         }
     }
     
     // get jumlah Wifi
-    public int getJumlahWifi(){
+
+    /**
+     * getter jumlahWifi Tempat
+     * @return jumlahWifi
+     */
+        public int getJumlahWifi(){
         return jumlahWifi;
     }
 
+    /**
+     * setter jumlahWifi Tempat
+     * @param a akan diset menjadi jumlahWifi Tempat
+     */
     public void setJumlahWifi(int a){
         jumlahWifi = a;
     }
     public void setMortgage(boolean status){
         mortgage = status;
     }
+
+    /**
+     * memeriksa apakah Tempat di-mortgage atau tidak
+     * @return true = tempat di mortgage, atau false = tempat tidak di mortgage
+     */
     public boolean isMortgaged(){
         return mortgage;
     }
+
+    /**
+     * Mencetak Tiles Tempat ke layar
+     */
     public void printTiles(){
         System.out.println(ansi().cursor(getX(),getY()).a(" _____"));
         for(int i=1;i<=3;i++){
@@ -173,6 +268,10 @@ public class Tempat extends Tiles{
         else{System.out.println(ansi().cursor(getX()+1,getY()+5).a(" "));}
         System.out.print(ansi().boldOff());
     }
+
+    /**
+     * Mencetak info Tempat
+     */
     public void printInfo(){
         System.out.println("ID = "+ID);
         System.out.println("Nama = "+nama);

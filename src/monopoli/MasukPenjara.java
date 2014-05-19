@@ -20,6 +20,10 @@ public class MasukPenjara extends Tiles {
     
     private static MasukPenjara penjara = new MasukPenjara();
     
+    /**
+     * Singleton dari MasukPenjara
+     * @return kelas MasukPenjara
+     */
     public static MasukPenjara getSingleton(){
         return penjara;
     }
@@ -29,40 +33,49 @@ public class MasukPenjara extends Tiles {
         super();
     }
     
-    // set lokasi dari tempat
-    public void setLokasi(int a, int b){
-        setKoordinat(a,b);
-    }
-    
-    // getter kordinat X
-    public int getKoorX(){
-        return getX();
-    }
-    
-    // getter koordinat Y
-    public int getKoorY(){
-        return getY();
-    }
-    
     // set deskripsi
-    public void setDesc(String a){
+
+    /**
+     * setter deskripsi MasukPenjara
+     * @param a akan diset untuk deskripsi MasukPenjara
+     */
+        public void setDesc(String a){
         deskripsi = a;
     }
     
     // get deskripsi
-    public String getDesc(){
+
+    /**
+     * getter deskripsi MasukPenjara
+     * @return deskripsi MasukPenjara
+     */
+        public String getDesc(){
         return deskripsi;
     }
     
     // set ID
-    public void setID(int a){
+
+    /**
+     * setter ID MasukPenjara
+     * @param a akan diset menjadi ID MasukPenjara
+     */
+        public void setID(int a){
         ID = a;
     }
     
     // get ID
-    public int getID(){
+
+    /**
+     * getter ID MasukPenjara
+     * @return ID MasukPenjara
+     */
+        public int getID(){
         return ID;
     }
+
+    /**
+     * Mencetak Tiles MasukPenjara ke layar
+     */
     public void printTiles(){
         System.out.println(ansi().fg(Ansi.Color.CYAN).cursor(getX(),getY()).a(" _____"));
         for(int i=1;i<=3;i++){
@@ -71,6 +84,10 @@ public class MasukPenjara extends Tiles {
         System.out.println(ansi().cursor(getX()+4,getY()).a("|_____|").fg(Ansi.Color.WHITE));
         System.out.println(ansi().cursor(getX()+1,getY()+1).a(ID));
     }
+
+    /**
+     * Mencetak informasi tentang MasukPenjara
+     */
     public void printInfo(){
         System.out.println("ID = "+ID);
         System.out.println("Deskripsi ="+deskripsi);
