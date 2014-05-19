@@ -14,7 +14,10 @@ public class readxmlfile {
 	private List<Integer> idarr = new ArrayList<Integer>();
 	private List<String> effsarr = new ArrayList<String>();
 
-	public void readXML() {
+    /**
+     * membaca semua informasi kartu kesempatan dari file XML
+     */
+    public void readXML() {
 	    try {
 
 	    	//getting xml file
@@ -40,20 +43,31 @@ public class readxmlfile {
 	    } catch (Exception e) {
 			e.printStackTrace();
 	    }
-	  }
+    }
 
-	//returning array size
-	public int getSize() {
+    /**
+     * getter size array
+     * @return size array
+     */
+    	public int getSize() {
 		return idarr.size();
 	}
 
-	//returning single ID
-	public int getID(int ID) {
+    /**
+     * getter ID 
+     * @param ID integer 
+     * @return single ID
+     */
+    	public int getID(int ID) {
 		return idarr.get(ID-1);
 	}
-
-	//returning description of a card of particular ID
-	public String getEff(int ID) {
+        
+    /**
+     * getter efek
+     * @param ID integer
+     * @return efek
+     */
+    	public String getEff(int ID) {
 		return effsarr.get(ID-1);
 	}
 }

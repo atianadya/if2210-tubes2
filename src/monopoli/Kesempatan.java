@@ -16,31 +16,6 @@ public class Kesempatan extends Tiles {
     }
     
     /**
-     * Mengeset lokasi dari Kesempatan
-     * @param a koordinat
-     * @param b koordinat
-     */
-        public void setLokasi(int a, int b){
-        setKoordinat(a,b);
-    }
-    
-    /**
-     * Getter koordinat X
-     * @return nilai integer x
-     */
-        public int getKoorX(){
-        return getX();
-    }
-    
-    /**
-     * Getter koordinat Y
-     * @return nilai integer y
-     */
-        public int getKoorY(){
-        return getY();
-    }
-    
-    /**
      *Setter deskripsi
      * @param a String yang akan di set ke deskripsi kesempatan
      */

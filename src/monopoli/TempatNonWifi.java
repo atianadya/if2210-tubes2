@@ -22,102 +22,148 @@ public class TempatNonWifi extends Tiles{
     private String pemilik;
     private boolean mortgage;
     
-    // konstruktor Tempat
-    public TempatNonWifi(){
+    /**
+     * konstruktor TempatNonWifi tanpa parameter
+     */
+        public TempatNonWifi(){
         super();
         mortgage = false;
     }
-    
-    // set lokasi dari tempat
-    public void setLokasi(int a, int b){
-        setKoordinat(a,b);
-    }
-    
-    // getter kordinat X
-    public int getKoorX(){
-        return getX();
-    }
-    
-    // getter koordinat Y
-    public int getKoorY(){
-        return getY();
-    }
-    
-    // set nama dari Tempat
-    public void setNama(String a){
+   
+    /**
+     * set nama dari Tempat
+     * @param a String yang akan diset ke nama
+     */
+        public void setNama(String a){
         nama = a;
     }
     
-    // get nama dari Tempat
-    public String getNama(){
+    /**
+     * get nama dari Tempat
+     * @return nama
+     */
+        public String getNama(){
         return nama;
     }
-    
-    // set deskripsi Tempat
-    public void setDeskripsi(String a){
+
+    /**
+     * set deskripsi Tempat
+     * @param a String yang akan diset ke deskripsi
+     */
+        public void setDeskripsi(String a){
         deskripsi = a;
     }
-    
-    // get deskripsi Tempat
-    public String getDesc(){
+ 
+    /**
+     * getter deskripsi Tempat
+     * @return deskripsi
+     */
+        public String getDesc(){
         return deskripsi;
     }
-    
-    // set ID Tempat
+
+    /**
+     * set ID Tempat
+     * @param i integer yang akan diset ke ID
+     */
+        @Override
     public void setID(int i){
         ID = i;
     }
-    
-    // get ID Tempat
+   
+    /**
+     * get ID Tempat
+     * @return ID
+     */
+        @Override
     public int getID(){
         return ID;
     }
-    
-    // set harga beli Tempat
-    public void setHargaBeli(int a){
+   
+    /**
+     * setter harga beli Tempat
+     * @param a integer yang akan diset ke hargaBeli
+     */
+        public void setHargaBeli(int a){
         hargaBeli = a;
     }
-    
-    // get harga beli Tempat
-    public int getHargaBeli(){
+   
+    /**
+     * getter harga beli Tempat
+     * @return hargaBeli
+     */
+        public int getHargaBeli(){
         return hargaBeli;
     }
-    
-    // set harga sewa Tempat
-    public void setHargaSewa(int a){
+   
+    /**
+     * setter harga sewa Tempat
+     * @param a integer yang akan diset ke hargaSewa
+     */
+        public void setHargaSewa(int a){
         hargaSewa = a;
     }
     
-    // get harga sewa Tempat
-    public int getHargaSewa(){
+    /**
+     * get hargaSewa Tempat
+     * @return hargaSewa
+     */
+        public int getHargaSewa(){
         return hargaSewa;
     }
- 
-    // set harga mortgage Tempat
-    public void setHargaMortgage(int a){
+
+    /**
+     * set hargaMortgage Tempat 
+     * @param a integer yang akan diset ke hargaMortgage
+     */
+        public void setHargaMortgage(int a){
         hargaMortgage = a;
     }
     
-    // get harga mortgage Tempat
-    public int getHargaMortgage(){
+    /**
+     * get harga mortgage Tempat
+     * @return hargaMortgage
+     */
+        public int getHargaMortgage(){
         return hargaMortgage;
     }
     
-    // set pemilik dari Tempat
-    public void setPemilik(String x){
+    /**
+     * set pemilik dari Tempat
+     * @param x String yang akan diset ke pemilik
+     */
+        public void setPemilik(String x){
         pemilik = x;
     }
     
-    // get pemilik dari Tempat
-    public String getPemilik(){
+    /**
+     * get pemilik dari Tempat
+     * @return pemilik
+     */
+        public String getPemilik(){
         return pemilik;
     }
+
+    /**
+     * set mortgage dari Tempat
+     * @param status boolean yang akan diset ke mortgage
+     */
     public void setMortgage(boolean status){
         mortgage = status;
     }
+
+    /**
+     * mengecek apakah tempat sedang digadaikan (mortgaged)
+     * @return mortgage. 
+     */
     public boolean isMortgaged(){
         return mortgage;
     }
+
+    /**
+     * mencetak Tile TempatNonWifi ke layar
+     */
+    @Override
     public void printTiles(){
         System.out.println(ansi().fg(Ansi.Color.YELLOW).cursor(getX(),getY()).a(" _____"));
         for(int i=1;i<=3;i++){
@@ -138,6 +184,11 @@ public class TempatNonWifi extends Tiles{
         else{System.out.println(ansi().cursor(getX()+1,getY()+4).a(" "));}
         System.out.print(ansi().boldOff());
     }
+
+    /**
+     * mencetak semua informasi TempatNonWifi
+     */
+    @Override
     public void printInfo(){
         System.out.println("ID = "+ID);
         System.out.println("Nama = "+nama);
