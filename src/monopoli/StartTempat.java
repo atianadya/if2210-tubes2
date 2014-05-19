@@ -20,6 +20,10 @@ public class StartTempat extends Tiles {
     
     private static StartTempat tempat = new StartTempat();
     
+    /**
+     * Singleton StartTempat
+     * @return tempat
+     */
     public static StartTempat getSingleton(){
         return tempat;
     }
@@ -29,40 +33,44 @@ public class StartTempat extends Tiles {
         super();
     }
     
-    // set lokasi dari tempat
-    public void setLokasi(int a, int b){
-        setKoordinat(a,b);
-    }
-    
-    // getter kordinat X
-    public int getKoorX(){
-        return getX();
-    }
-    
-    // getter koordinat Y
-    public int getKoorY(){
-        return getY();
-    }
-    
-    // set deskripsi
-    public void setDesc(String a){
+    /**
+     * setter deskripsi
+     * @param a String yang akan diset ke deskripsi
+     */
+        public void setDesc(String a){
         deskripsi = a;
     }
     
-    // get deskripsi
-    public String getDesc(){
+    /**
+     * getter deskripsi
+     * @return deskripsi
+     */
+        public String getDesc(){
         return deskripsi;
     }
     
-    // set ID
+    /**
+     * set ID
+     * @param a integer yang akan diset ke ID Tile StartTempat
+     */
+        @Override
     public void setID(int a){
         ID = a;
     }
-    
-    // get ID
+   
+    /**
+     * get ID
+     * @return ID 
+     */
+        @Override
     public int getID(){
         return ID;
     }
+
+    /**
+     * mencetak Tile StartTempat ke layar
+     */
+    @Override
     public void printTiles(){
         System.out.println(ansi().fg(Ansi.Color.GREEN).cursor(getX(),getY()).a(" _____"));
         for(int i=1;i<=3;i++){
@@ -71,6 +79,11 @@ public class StartTempat extends Tiles {
         System.out.println(ansi().cursor(getX()+4,getY()).a("|_____|").fg(Ansi.Color.WHITE));
         System.out.println(ansi().cursor(getX()+1,getY()+1).a(ID));
     }
+
+    /**
+     * mencetak ID dan deskripsi StartTempat
+     */
+    @Override
     public void printInfo(){
         System.out.println("ID = "+ID);
         System.out.println("Deskripsi ="+deskripsi);
