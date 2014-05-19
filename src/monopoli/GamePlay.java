@@ -30,6 +30,10 @@ public class GamePlay {
     private chanceCard Kartu;
     private static boolean GameOver;
     public BoardView Board;
+
+    /**
+     * Konstruktor GamePlay tanpa parameter
+     */
     public GamePlay(){
         Board = new BoardView();
         Q = new LinkedList<>();
@@ -66,10 +70,18 @@ public class GamePlay {
         Kartu = new chanceCard(this);
         GameOver =false;
     }
+
+    /**
+     * Mencetak status-status Player yang berisi "Current Plauer" dan "Current Money"
+     */
     public void Status(){
         System.out.println("Current Player : "+ ansi().bold().a(CurrentPlayer.getSymbol()+" "+CurrentPlayer.getnama()+" (Player ke-"+CurrentPlayer.getID()+")").boldOff());
         System.out.println("Current Money  : "+ ansi().bold().a("ITBR "+CurrentPlayer.getuang()).boldOff());
     }
+
+    /**
+     * Mengocok dadu untuk menentukan langkah Player
+     */
     public void KocokDadu(){
         if(CurrentPlayer.getuang()>=0){
             if(CurrentPlayer.getstatus()){
@@ -128,6 +140,10 @@ public class GamePlay {
             System.out.println("Jika tidak bisa, nyatakan bangkrut");
         }
     }
+
+    /**
+     * Membeli Tempat atau TempatNonWifi
+     */
     public void Buy(){
         if(CurrentPlayer.getposisi() instanceof Tempat){
             if(((Tempat)CurrentPlayer.getposisi()).getPemilik().equals("Unknown")){
@@ -155,7 +171,12 @@ public class GamePlay {
         }
         else{System.out.println("Tempat tidak bisa dibeli");}
     }
-    public void Mortgage( int i){
+
+    /**
+     * Men-mortgage Tempat/TempatNonWifi
+     * @param i indeks Tempat/TempatNonWifi yang akan di-mortgage
+     */
+    public void Mortgage(int i){
         if(Board.getTile(i) instanceof Tempat){
             Tempat A = (Tempat)Board.getTile(i);
             if (A.getPemilik().equals(CurrentPlayer.getnama())){
@@ -189,6 +210,11 @@ public class GamePlay {
         }
         else{System.out.println("Tempat bukan properti");}
     }
+
+    /**
+     * Men-unmortgage Tempat/TempatNonWifi
+     * @param i indeks Tempat/TempatNonWifi yang akan di-unmortgage
+     */
     public void UnMortgage( int i){
         if(Board.getTile(i) instanceof Tempat){
             Tempat A = (Tempat)Board.getTile(i);
@@ -220,6 +246,11 @@ public class GamePlay {
         }
         else{System.out.println("Tempat bukan properti");}
     }
+    
+    /**
+     * Memasang jaringan WiFi pada Tempat/TempatNonWifi
+     * @param i indeks Tempat/TempatNonWifi yang berupa integer yang akan dipasang jaringan WiFi
+     */
     public void BuyWifi( int i){
         if(Board.getTile(i) instanceof Tempat){
             Tempat A = (Tempat)Board.getTile(i);
@@ -245,6 +276,11 @@ public class GamePlay {
         }
         else{System.out.println("Bukan tempat yang ada WIFI");}
     }
+
+    /**
+     * Menjual jaringan WiFi pada suatu Tempat/TempatNonWifi
+     * @param i indeks Tempat/TempatNonWifi yang akan dijual WiFinya 
+     */
     public void SellWifi( int i){
         if(Board.getTile(i) instanceof Tempat){
             Tempat A = (Tempat)Board.getTile(i);
@@ -263,12 +299,20 @@ public class GamePlay {
         }
         else{System.out.println("Bukan tempat yang ada WIFI");}
     }
+
+    /**
+     * Prosedur untuk membangkrutkan pemain
+     */
     public void DeclareBanckrupt(){
         CurrentPlayer.HapusAllAset();
         System.out.println(CurrentPlayer.getnama() + " menyatakan bangkrut");
         Q.poll();
         CurrentPlayer = Q.peek();
     }
+
+    /**
+     * Mengakhiri giliran bermain suatu Player
+     */
     public void EndTurn(){
         if(CurrentPlayer.getuang()>=0){
             if(CurrentPlayer.getstatus()){
@@ -293,6 +337,10 @@ public class GamePlay {
             System.out.println("Jika tidak bisa, nyatakan bangkrut");
         }
     }
+
+    /**
+     * GamePlay dari Monopoli
+     */
     public void Start(){
         String aksi;
         int lokasi,ID;
@@ -379,12 +427,21 @@ public class GamePlay {
             while(!read.nextLine().equals(""));
         }    
     }
+
+    /**
+     * Menaruh symbol Player pada Board
+     */
     public void PutBoard(){
         Board.PrintBoard();
         for (Player A : Q) {
             Board.PutPlayerOnBoard(A.getposisi(), A.getID(), A.getSymbol());
         }
     }
+
+    /**
+     * Menampilkan aset-aset yang dimiliki oleh Player dengan ID ID
+     * @param ID ID Player yang akan dilihat asetnya
+     */
     public void ViewAset(int ID) {
         for(Player A : Q){
             if(A.getID()==ID){
@@ -392,6 +449,11 @@ public class GamePlay {
             }
         }
     }
+
+    /**
+     * Melihat informasi-informasi Player yang memiliki ID ID
+     * @param ID ID Player yang akan dilihat informasinya
+     */
     public void InfoPlayer(int ID){
         for(Player A : Q){
             if(A.getID()==ID){
@@ -399,9 +461,18 @@ public class GamePlay {
             }
         }
     }
+
+    /**
+     * Melihat informasi suatu Tiles
+     * @param lokasi indeks integer yang menyatakan Tiles yang akan dilihat informasinya
+     */
     public void PrintInfoTile(int lokasi) {
         Board.getTile(lokasi).printInfo();
     }
+
+    /**
+     * Menampilkan menu Help untuk membantu pemain ketika memainkan permainan ini
+     */
     public void Help(){
         System.out.println(ansi().bold().a("\nkocok").boldOff()+ " -> Mengkocok dadu");
         System.out.println(ansi().bold().a("buy").boldOff()+" -> Membeli properti di tile player berada");
@@ -446,6 +517,12 @@ public class GamePlay {
             }
         }
     }
+
+    /**
+     * Memindahkan posisi Player
+     * @param CurrentPlayer Player yang akan dipindah letaknya
+     * @param move jumlah perpindahan CurrentPlayer
+     */
     public void Move(Player CurrentPlayer, int move) {
         int NewPosisi;
         boolean lewatstart = false;

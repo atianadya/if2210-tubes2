@@ -26,7 +26,11 @@ public class BoardView {
     public static final int BOARD_HEIGHT = 56;
     private LinkedList<Tiles> ListOfTiles;
     // inisialisasi tempat di tiles
-    public BoardView(){
+
+    /**
+     * Konstruktor BoardView tanpa parameter. Menginisialisasi ListOfTiles.
+     */
+        public BoardView(){
         ListOfTiles = new LinkedList<>();
         Initialization();
     }
@@ -196,6 +200,13 @@ public class BoardView {
             ListOfTiles.get(i+29).setKoordinat(BOARD_HEIGHT-i*5,1);
         }
     }
+
+    /**
+     * Menaruh Player pada papan permainan
+     * @param IDLokasi IDLokasi yang bertipe Tiles
+     * @param IDPlayer IDPlayer yang bertipe integer
+     * @param ASCIIchar ASCIIchar yang bertipe char
+     */
     public void PutPlayerOnBoard(Tiles IDLokasi,int IDPlayer,char ASCIIchar){
         Tiles A = IDLokasi;
         System.out.print(ansi().bold());
@@ -216,6 +227,12 @@ public class BoardView {
         }
         System.out.print(ansi().boldOff());
     }
+
+    /**
+     * Menghapus pemain yang memiliki ID IDPlayer yang berada di lokasi Tiles IDLokasi
+     * @param IDLokasi IDLokasi yang bertipe Tiles
+     * @param IDPlayer IDPlayer yang bertipe integer
+     */
     public void ErasePlayerOnBoard(Tiles IDLokasi,int IDPlayer){
         Tiles A = IDLokasi;
         System.out.print(ansi().bold());
@@ -236,15 +253,32 @@ public class BoardView {
         }
         System.out.print(ansi().boldOff());
     }
+
+    /**
+     * Mencetak papan permainan
+     *
+     */
     public void PrintBoard(){
         for(Tiles A : ListOfTiles){
             A.printTiles();
         }
         System.out.println(ansi().cursor(BOARD_HEIGHT, 0));
     }
+    
+    /**
+     * Mengembalikan Tiles pada indeks ke i
+     * @param i indeks berupa integer yang akan dilihat informasi Tilesnya
+     * @return mengembalikan Tiles pada indeks ke i
+     */
     public Tiles getTile(int i){
         return ListOfTiles.get(i-1);
     }
+
+    /**
+     * Mengetahui indeks suatu Tempat dengan memasukkan namanya
+     * @param nama String yang digunakan untuk mencari indeks di mana nama berada
+     * @return integer yang berupa indeks di mana nama berapa
+     */
     public int getTile(String nama){
         for(Tiles A : ListOfTiles){
             if(A instanceof Tempat){
@@ -262,6 +296,11 @@ public class BoardView {
         }
         return 0;
     }
+
+    /**
+     * Menghitung jumlah Tiles yang ada
+     * @return integer yang berupa jumlah Tiles
+     */
     public int NumberOfTiles(){
         return ListOfTiles.size();
     }
